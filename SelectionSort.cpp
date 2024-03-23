@@ -4,14 +4,14 @@
 
 template<typename T>
 void selectionSort (T (&numbers)[]) {
-    for (i = 0; i < sizeof(numbers) - 1; ++i) {
-        indexSmallest = i;
-        for (j = i + 1; j < numbersSize; ++j) {
+    for (int i = 0; i < sizeof(numbers) - 1; ++i) {
+        int indexSmallest = i;
+        for (int j = i + 1; j < sizeof(numbers); ++j) {
             if (numbers[j] < numbers[indexSmallest]) {
                 indexSmallest = j;
             }
         }
-        temp = numbers[i];
+        int temp = numbers[i];
         numbers[i] = numbers[indexSmallest];
         numbers[indexSmallest] = temp;
     }
