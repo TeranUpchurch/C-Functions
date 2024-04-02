@@ -1,6 +1,6 @@
 
 // C++ Merge Sort
-// Time complexity: Always O(nlogn)
+// Time complexity: O(nlogn)
 
 void MergeSort(int numbers[], int i, int k) {
     int j;
