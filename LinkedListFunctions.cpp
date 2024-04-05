@@ -1,5 +1,6 @@
-//Go over Linked List Funcitons from class
-//Upload to GitHub
+
+// Doubly Linked List Funcitons
+// Very Errory, needs lots of fixes
 
 
 class Node {
@@ -9,8 +10,8 @@ class Node {
         Node* prev;
         Node() {
             data = 0;
-            next = NULL;
-            prev = NULL;
+            next = nullptr;
+            prev = nullptr;
         } 
 };
 
@@ -19,13 +20,13 @@ class List {
         Node* head;
         Node* tail;
         List() {
-            head = NULL;
-            tail = NULL;
+            head = nullptr;
+            tail = nullptr;
         }
 };
 
 void ListInsertAfter(List &list, Node &curNode, Node &newNode) {
-   if (list->head == NULL) { // List empty
+   if (list->head == nullptr) { // List empty
       list->head = newNode;
       list->tail = newNode;
    }
@@ -47,11 +48,11 @@ void ListRemove(List &list, Node &curNode) {
    Node sucNode = curNode->next;
    Node predNode = curNode->prev;
 
-   if (sucNode is not null) {
+   if (sucNode is not nullptr) {
       sucNode->prev = predNode;
    }
 
-   if (predNode is not null) {
+   if (predNode is not nullptr) {
       predNode->next = sucNode;
    }
 
@@ -67,7 +68,7 @@ void ListRemove(List &list, Node &curNode) {
 void ListTraverse(List &list) {
    curNode = list->head // Start at head
 
-   while (curNode is not null) { 
+   while (curNode is not nullptr) { 
       Print curNode's data        
       curNode = curNode->next
    }
@@ -75,16 +76,16 @@ void ListTraverse(List &list) {
 
 void ListInsertionSortDoublyLinked(List &list) {
    Node curNode = list->head->next
-   while (curNode != null) {
+   while (curNode != nullptr) {
       Node nextNode = curNode->next
       Node searchNode = curNode->prev
-      while (searchNode != null and searchNode->data > curNode->data) {
+      while (searchNode != nullptr and searchNode->data > curNode->data) {
          searchNode = searchNode->prev
       }
       // Remove and re-insert curNode
       ListRemove(list, curNode)
-      if (searchNode == null) {
-         curNode->prev = null
+      if (searchNode == nullptr) {
+         curNode->prev = nullptr
          ListPrepend(list, curNode)
       }
       else {
@@ -96,18 +97,18 @@ void ListInsertionSortDoublyLinked(List &list) {
 }
 
 void ListInsertionSortSinglyLinked(List &list) {
-    beforeCurrent = list->head;
-    curNode = list->head->next;
-    while (curNode != null) {
+    Node prevNode = list->head;
+    Node curNode = list->head->next;
+    while (curNode != nullptr) {
         next = curNode->next;
-        position = ListFindInsertionPosition(list, curNode->data)
+        position = ListFindInsertionPosition(list, curNode->data);
 
         if (position == beforeCurrent) {
             beforeCurrent = curNode;
         }
         else {
             ListRemoveAfter(list, beforeCurrent);
-            if (position == null);
+            if (position == nullptr);
                 ListPrepend(list, curNode);
             else
                 ListInsertAfter(list, position, curNode);
