@@ -48,11 +48,11 @@ void ListRemove(List &list, Node &curNode) {
    Node sucNode = curNode->next;
    Node predNode = curNode->prev;
 
-   if (sucNode is not nullptr) {
+   if (sucNode != nullptr) {
       sucNode->prev = predNode;
    }
 
-   if (predNode is not nullptr) {
+   if (predNode != nullptr) {
       predNode->next = sucNode;
    }
 
@@ -66,33 +66,33 @@ void ListRemove(List &list, Node &curNode) {
 }
 
 void ListTraverse(List &list) {
-   curNode = list->head // Start at head
+   curNode = list->head;// Start at head
 
-   while (curNode is not nullptr) { 
-      Print curNode's data        
-      curNode = curNode->next
+   while (curNode != nullptr) { 
+      cout << curNode.data << " ";       
+      curNode = curNode->next;
    }
 }
 
 void ListInsertionSortDoublyLinked(List &list) {
-   Node curNode = list->head->next
+   Node curNode = list->head->next;
    while (curNode != nullptr) {
-      Node nextNode = curNode->next
-      Node searchNode = curNode->prev
+      Node nextNode = curNode->next;
+      Node searchNode = curNode->prev;
       while (searchNode != nullptr and searchNode->data > curNode->data) {
-         searchNode = searchNode->prev
+         searchNode = searchNode->prev;
       }
       // Remove and re-insert curNode
-      ListRemove(list, curNode)
+      ListRemove(list, curNode);
       if (searchNode == nullptr) {
-         curNode->prev = nullptr
-         ListPrepend(list, curNode)
+         curNode->prev = nullptr;
+         ListPrepend(list, curNode);
       }
       else {
-         ListInsertAfter(list, searchNode, curNode)
+         ListInsertAfter(list, searchNode, curNode);
       }
       // Advance to next node
-      curNode = nextNode
+      curNode = nextNode;
    }
 }
 
