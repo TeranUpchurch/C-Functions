@@ -4,15 +4,15 @@
 
 
 class Node {
-    public:
-        int data;
-        Node* next;
-        Node* prev;
-        Node() {
-            data = 0;
-            next = nullptr;
-            prev = nullptr;
-        } 
+   public:
+      int data;
+      Node* next;
+      Node* prev;
+      Node() {
+         data = 0;
+         next = nullptr;
+         prev = nullptr;
+      } 
 };
 
 class List {
@@ -23,12 +23,22 @@ class List {
          head = nullptr;
          tail = nullptr;
          }
+      void ListPrepend(Node *newNode);
       void ListInsertAfter(Node *curNode, Node *newNode);
       void ListRemove(Node *curNode);
-      void ListTraverse(List *List);
+      void ListTraverse();
       void ListInsertionSortDoublyLinked();
       void ListInsertionSortSinglyLinked();
 };
+
+void List::ListPrepend(Node *newNode) {
+   if (head == nullptr) {
+
+   }
+   else {
+      
+   }
+}
 
 void List::ListInsertAfter(Node *curNode, Node *newNode) {
    if (head == nullptr) { // List empty
@@ -70,11 +80,12 @@ void List::ListRemove(Node *curNode) {
    }
 }
 
-void List::ListTraverse(List *List) {
+void List::ListTraverse() {
    Node *curNode = head;// Start at head
 
    while (curNode != nullptr) { 
-      curNode->data.printInfo();       
+      // cout << curNode->data << " ";
+      // or use print info function if defined     
       curNode = curNode->next;
    }
 }
@@ -102,23 +113,24 @@ void List::ListInsertionSortDoublyLinked() {
 }
 
 void List::ListInsertionSortSinglyLinked() {
-    Node *prevNode = head;
-    Node *curNode = head->next;
-    while (curNode != nullptr) {
-        curNode = curNode->next;
-        position = ListFindInsertionPosition(List, curNode->data);
+   Node *prevNode = head;
+   Node *curNode = head->next;
+   while (curNode != nullptr) {
+      curNode = curNode->next;
+      position = ListFindInsertionPosition(List, curNode->data);
 
-        if (position == beforeCurrent) {
-            beforeCurrent = curNode;
-        }
-        else {
-            ListRemoveAfter(List, beforeCurrent);
-            if (position == nullptr);
-                ListPrepend(List, curNode);
-            else
-                ListInsertAfter(List, position, curNode);
-        }
-
+      if (position == beforeCurrent) {
+         beforeCurrent = curNode;
+      }
+      else {
+         ListRemoveAfter(beforeCurrent);
+         if (position == nullptr) {
+            ListPrepend(curNode);
+         }
+         else {
+            ListInsertAfter(position, curNode);
+         }
+      } 
         curNode = curNode->next;
     }
 }
