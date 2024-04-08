@@ -16,24 +16,27 @@ class Node {
 };
 
 class List {
-    public:
-        Node* head;
-        Node* tail;
-        List() {
-            head = nullptr;
-            tail = nullptr;
-        }
+   public:
+      Node* head;
+      Node* tail;
+      List() {
+         head = nullptr;
+         tail = nullptr;
+         }
+      void ListInsertAfter(Node &curNode, Node &newNode);
+      void ListRemove(List &list, Node &curNode);
+
 };
 
-void List::List::ListInsertAfter(Node &curNode, Node &newNode) {
-   if (list->head == nullptr) { // List empty
-      list->head = newNode;
-      list->tail = newNode;
+void List::ListInsertAfter(Node &curNode, Node &newNode) {
+   if (List->head == nullptr) { // List empty
+      List->head = newNode;
+      List->tail = newNode;
    }
-   else if (curNode == list->tail) { // Insert after tail
-      list->tail->next = newNode;
-      newNode->prev = list->tail;
-      list->tail = newNode;
+   else if (curNode == List->tail) { // Insert after tail
+      List->tail->next = newNode;
+      newNode->prev = List->tail;
+      List->tail = newNode;
    }
    else {
       Node sucNode = curNode->next;
@@ -44,7 +47,7 @@ void List::List::ListInsertAfter(Node &curNode, Node &newNode) {
    }
 }
 
-void List::ListRemove(List &list, Node &curNode) {
+void List::ListRemove(List &List, Node &curNode) {
    Node sucNode = curNode->next;
    Node predNode = curNode->prev;
 
@@ -56,17 +59,17 @@ void List::ListRemove(List &list, Node &curNode) {
       predNode->next = sucNode;
    }
 
-   if (curNode == list->head) { // Removed head
-      list->head = sucNode;
+   if (curNode == List->head) { // Removed head
+      List->head = sucNode;
    }
 
-   if (curNode == list->tail) { // Removed tail
-      list->tail = predNode;
+   if (curNode == List->tail) { // Removed tail
+      List->tail = predNode;
    }
 }
 
-void List::ListTraverse(List &list) {
-   curNode = list->head;// Start at head
+void List::ListTraverse(List &List) {
+   curNode = List->head;// Start at head
 
    while (curNode != nullptr) { 
       cout << curNode.data << " ";       
@@ -74,8 +77,8 @@ void List::ListTraverse(List &list) {
    }
 }
 
-void List::ListInsertionSortDoublyLinked(List &list) {
-   Node curNode = list->head->next;
+void List::ListInsertionSortDoublyLinked(List &List) {
+   Node curNode = List->head->next;
    while (curNode != nullptr) {
       Node nextNode = curNode->next;
       Node searchNode = curNode->prev;
@@ -83,35 +86,35 @@ void List::ListInsertionSortDoublyLinked(List &list) {
          searchNode = searchNode->prev;
       }
       // Remove and re-insert curNode
-      ListRemove(list, curNode);
+      ListRemove(List, curNode);
       if (searchNode == nullptr) {
          curNode->prev = nullptr;
-         ListPrepend(list, curNode);
+         ListPrepend(List, curNode);
       }
       else {
-         ListInsertAfter(list, searchNode, curNode);
+         ListInsertAfter(List, searchNode, curNode);
       }
       // Advance to next node
       curNode = nextNode;
    }
 }
 
-void List::ListInsertionSortSinglyLinked(List &list) {
-    Node prevNode = list->head;
-    Node curNode = list->head->next;
+void List::ListInsertionSortSinglyLinked(List &List) {
+    Node prevNode = List->head;
+    Node curNode = List->head->next;
     while (curNode != nullptr) {
         next = curNode->next;
-        position = ListFindInsertionPosition(list, curNode->data);
+        position = ListFindInsertionPosition(List, curNode->data);
 
         if (position == beforeCurrent) {
             beforeCurrent = curNode;
         }
         else {
-            ListRemoveAfter(list, beforeCurrent);
+            ListRemoveAfter(List, beforeCurrent);
             if (position == nullptr);
-                ListPrepend(list, curNode);
+                ListPrepend(List, curNode);
             else
-                ListInsertAfter(list, position, curNode);
+                ListInsertAfter(List, position, curNode);
         }
 
         curNode = curNode->next;
