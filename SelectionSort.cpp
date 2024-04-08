@@ -1,5 +1,5 @@
 
-// Selection Sort Function
+// Selection Sort C++
 // Worst case: O(n^2), Best case O(n^2)
 
 template<typename T>

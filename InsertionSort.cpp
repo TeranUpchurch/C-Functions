@@ -1,5 +1,5 @@
 
-// Insertion Sort Function
+// Insertion Sort C++
 // Worst case: O(n^2), Best case O(n)
 
 template <typename T>

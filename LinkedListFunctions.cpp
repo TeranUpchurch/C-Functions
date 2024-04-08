@@ -1,5 +1,5 @@
 
-// Doubly Linked List Funcitons
+// Doubly Linked List Funcitons C++
 // Very Errory, needs lots of fixes
 
 

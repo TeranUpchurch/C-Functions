@@ -1,5 +1,5 @@
 
-// C++ GPA Calculator
+// GPA Calculator C++
 
 #include <iostream>
 #include <string>
