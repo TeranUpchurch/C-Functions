@@ -24,7 +24,7 @@ class List {
          tail = nullptr;
          }
       void ListInsertAfter(Node *curNode, Node *newNode);
-      void ListRemove(List *list, Node *curNode);
+      void ListRemove(Node *curNode);
       void ListTraverse(List *List);
       void ListInsertionSortDoublyLinked();
       void ListInsertionSortSinglyLinked();
@@ -49,9 +49,9 @@ void List::ListInsertAfter(Node *curNode, Node *newNode) {
    }
 }
 
-void List::ListRemove(List *List, Node *curNode) {
-   Node sucNode = curNode->next;
-   Node predNode = curNode->prev;
+void List::ListRemove(Node *curNode) {
+   Node *sucNode = curNode->next;
+   Node *predNode = curNode->prev;
 
    if (sucNode != nullptr) {
       sucNode->prev = predNode;
@@ -71,30 +71,30 @@ void List::ListRemove(List *List, Node *curNode) {
 }
 
 void List::ListTraverse(List *List) {
-   curNode = head;// Start at head
+   Node *curNode = head;// Start at head
 
    while (curNode != nullptr) { 
-      cout << curNode.data << " ";       
+      curNode->data.printInfo();       
       curNode = curNode->next;
    }
 }
 
 void List::ListInsertionSortDoublyLinked() {
-   Node curNode = head->next;
+   Node *curNode = head->next;
    while (curNode != nullptr) {
-      Node nextNode = curNode->next;
-      Node searchNode = curNode->prev;
+      Node *nextNode = curNode->next;
+      Node *searchNode = curNode->prev;
       while (searchNode != nullptr and searchNode->data > curNode->data) {
          searchNode = searchNode->prev;
       }
       // Remove and re-insert curNode
-      ListRemove(List, curNode);
+      List::ListRemove(curNode);
       if (searchNode == nullptr) {
          curNode->prev = nullptr;
-         ListPrepend(List, curNode);
+         ListPrepend(curNode);
       }
       else {
-         ListInsertAfter(List, searchNode, curNode);
+         ListInsertAfter(searchNode, curNode);
       }
       // Advance to next node
       curNode = nextNode;
@@ -102,10 +102,10 @@ void List::ListInsertionSortDoublyLinked() {
 }
 
 void List::ListInsertionSortSinglyLinked() {
-    Node prevNode = head;
-    Node curNode = head->next;
+    Node *prevNode = head;
+    Node *curNode = head->next;
     while (curNode != nullptr) {
-        next = curNode->next;
+        curNode = curNode->next;
         position = ListFindInsertionPosition(List, curNode->data);
 
         if (position == beforeCurrent) {
