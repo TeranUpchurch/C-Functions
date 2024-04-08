@@ -1,5 +1,5 @@
 
-// C++ Merge Sort
+// Merge Sort C++
 // Time complexity: O(nlogn)
 
 void MergeSort(int numbers[], int i, int k) {

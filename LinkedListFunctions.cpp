@@ -25,7 +25,7 @@ class List {
         }
 };
 
-void ListInsertAfter(List &list, Node &curNode, Node &newNode) {
+void List::List::ListInsertAfter(Node &curNode, Node &newNode) {
    if (list->head == nullptr) { // List empty
       list->head = newNode;
       list->tail = newNode;
@@ -44,7 +44,7 @@ void ListInsertAfter(List &list, Node &curNode, Node &newNode) {
    }
 }
 
-void ListRemove(List &list, Node &curNode) {
+void List::ListRemove(List &list, Node &curNode) {
    Node sucNode = curNode->next;
    Node predNode = curNode->prev;
 
@@ -65,7 +65,7 @@ void ListRemove(List &list, Node &curNode) {
    }
 }
 
-void ListTraverse(List &list) {
+void List::ListTraverse(List &list) {
    curNode = list->head;// Start at head
 
    while (curNode != nullptr) { 
@@ -74,7 +74,7 @@ void ListTraverse(List &list) {
    }
 }
 
-void ListInsertionSortDoublyLinked(List &list) {
+void List::ListInsertionSortDoublyLinked(List &list) {
    Node curNode = list->head->next;
    while (curNode != nullptr) {
       Node nextNode = curNode->next;
@@ -96,7 +96,7 @@ void ListInsertionSortDoublyLinked(List &list) {
    }
 }
 
-void ListInsertionSortSinglyLinked(List &list) {
+void List::ListInsertionSortSinglyLinked(List &list) {
     Node prevNode = list->head;
     Node curNode = list->head->next;
     while (curNode != nullptr) {
