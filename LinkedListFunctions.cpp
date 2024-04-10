@@ -1,7 +1,6 @@
 
 // Doubly Linked List Funcitons C++
-// Very Errory, needs lots of fixes
-
+// Not all, only a few
 
 class Node {
    public:
