@@ -1,6 +1,6 @@
 
 // Doubly Linked List Funcitons C++
-// Not all, only a few
+// Not all, only a few only more doubly linked lists
 
 class Node {
    public:
