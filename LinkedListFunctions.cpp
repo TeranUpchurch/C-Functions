@@ -26,7 +26,8 @@ class List {
       void ListPrepend(Node *newNode);
       void ListInsertAfter(Node *curNode, Node *newNode);
       void ListRemoveAfter(Node *curNode);
-      void ListPeekFront();
+      Node ListPeekFront();
+      Node ListPeekBack();
       void ListTraversePrint();
       void ListInsertionSortDoublyLinked();
       void ListInsertionSortSinglyLinked();
