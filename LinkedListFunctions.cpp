@@ -28,6 +28,8 @@ class List {
       void ListRemoveAfter(Node *curNode);
       Node ListPeekFront();
       Node ListPeekBack();
+      Node ListPopFront();
+      Node ListPopBack();
       void ListTraversePrint();
       void ListInsertionSortDoublyLinked();
       void ListInsertionSortSinglyLinked();
