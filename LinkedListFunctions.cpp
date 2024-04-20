@@ -106,9 +106,9 @@ Node List::ListPeekFront() {
 Node ListPeekBack() {
 
 }
-      Node ListPopFront() {
+Node ListPopFront() {
 
-      }
+}
       Node ListPopBack();
 
 void List::ListTraversePrint() {
