@@ -109,7 +109,9 @@ Node ListPeekBack() {
 Node ListPopFront() {
 
 }
-      Node ListPopBack();
+      Node ListPopBack() {
+         
+      }
 
 void List::ListTraversePrint() {
    Node *curNode = head;// Start at head
