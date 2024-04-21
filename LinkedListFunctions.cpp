@@ -26,7 +26,7 @@ class List {
       void ListPrepend(Node *newNode);
       void ListInsertAfter(Node *curNode, Node *newNode);
       void ListRemoveAfter(Node *curNode);
-      Node ListPeekFront();
+      Node *ListPeekFront();
       Node ListPeekBack();
       Node ListPopFront();
       Node ListPopBack();
@@ -99,8 +99,8 @@ void List::ListRemoveAfter(Node *curNode) {
    }
 }
 
-Node List::ListPeekFront() {
-
+Node *List::ListPeekFront() {
+   return head;
 }
 
 Node ListPeekBack() {
