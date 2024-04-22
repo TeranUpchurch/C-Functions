@@ -87,7 +87,7 @@ void List::ListRemoveAfter(Node *curNode) {
    }
 
    if (predNode != nullptr) {
-      predNode->next = sucNode;
+      predNode->next = sucNode;// w
    }
 
    if (curNode == head) { // Removed head
