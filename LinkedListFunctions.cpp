@@ -27,9 +27,9 @@ class List {
       void ListInsertAfter(Node *curNode, Node *newNode);
       void ListRemoveAfter(Node *curNode);
       Node *ListPeekFront();
-      Node ListPeekBack();
-      Node ListPopFront();
-      Node ListPopBack();
+      Node *ListPeekBack();
+      Node *ListPopFront();
+      Node *ListPopBack();
       void ListTraversePrint();
       void ListInsertionSortDoublyLinked();
       void ListInsertionSortSinglyLinked();
@@ -87,7 +87,7 @@ void List::ListRemoveAfter(Node *curNode) {
    }
 
    if (predNode != nullptr) {
-      predNode->next = sucNode;// w
+      predNode->next = sucNode;
    }
 
    if (curNode == head) { // Removed head
@@ -103,15 +103,15 @@ Node *List::ListPeekFront() {
    return head;
 }
 
-Node ListPeekBack() {
+Node *List::ListPeekBack() {
+   return tail;
+}
+
+Node *List::ListPopFront() {
 
 }
 
-Node ListPopFront() {
-
-}
-
-Node ListPopBack() {
+Node *List::ListPopBack() {
 
 }
 
