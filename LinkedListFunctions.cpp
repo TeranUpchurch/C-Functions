@@ -32,7 +32,6 @@ class List {
       Node *ListPopBack();
       void ListTraversePrint();
       void ListInsertionSortDoublyLinked();
-      void ListInsertionSortSinglyLinked();
 };
 
 void List::ListAppend(Node *newNode) {
