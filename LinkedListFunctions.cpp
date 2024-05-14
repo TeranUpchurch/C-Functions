@@ -146,4 +146,4 @@ void List::ListInsertionSortDoublyLinked() {
       // Advance to next node
       curNode = nextNode;
    }
-};
+}
